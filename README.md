@@ -18,8 +18,7 @@ minimizing the number of false positives. The system can be further improved by 
 more complex architectures of CNN models.
 
 
-# Keywords: pneumonia detection, convolutional neural networks, deep learning, Keras, OpenCV, image processing, medical
-image analysis, python
+# Keywords: pneumonia detection, convolutional neural networks, deep learning, Keras, OpenCV, image processing, medical image analysis, python
 
 
 # Introduction
