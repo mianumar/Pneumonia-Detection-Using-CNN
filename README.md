@@ -2,7 +2,7 @@
 Pneumonia Detection from Chest X-ray images using Convolutional Neural Networks (CNNs) Used Python
 
 
-#Abstract
+# Abstract
 This project presents a pneumonia detection system using CNNs, with an accuracy rate of 88.14 percent on the test dataset. The
 system uses the Keras deep learning library, along with OpenCV, NumPy, imageio, and matplotlib, to build and train the CNN
 model. The system processes and augments the training data, generates the training and testing datasets, and converts the testing
