@@ -1,0 +1,109 @@
+runfile('D:/PUCIT MPhill CS/Semester 1/Medical Image Analysis/Pneumonia Detection/untitled1.py', wdir='D:/PUCIT MPhill CS/Semester 1/Medical Image Analysis/Pneumonia Detection')
+Set: test, Normal Images: 234, Pneumonia Images: 390
+Set: train, Normal Images: 1341, Pneumonia Images: 3875
+Set: val, Normal Images: 8, Pneumonia Images: 8
+Train Data Gen <keras.preprocessing.image.ImageDataGenerator object at 0x000001BA18A0FD00>
+Test Data Gen <keras.preprocessing.image.ImageDataGenerator object at 0x000001BA184F5FA0>
+Found 5216 images belonging to 2 classes.
+Found 624 images belonging to 2 classes.
+
+2023-03-31 15:14:37.305395: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 200, 200, 3)]     0         
+                                                                 
+ conv2d (Conv2D)             (None, 200, 200, 16)      448       
+                                                                 
+ conv2d_1 (Conv2D)           (None, 200, 200, 16)      2320      
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 100, 100, 16)     0         
+ )                                                               
+                                                                 
+ separable_conv2d (Separable  (None, 100, 100, 32)     688       
+ Conv2D)                                                         
+                                                                 
+ separable_conv2d_1 (Separab  (None, 100, 100, 32)     1344      
+ leConv2D)                                                       
+                                                                 
+ batch_normalization (BatchN  (None, 100, 100, 32)     128       
+ ormalization)                                                   
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 50, 50, 32)       0         
+ 2D)                                                             
+                                                                 
+ dropout (Dropout)           (None, 50, 50, 32)        0         
+                                                                 
+ flatten (Flatten)           (None, 80000)             0         
+                                                                 
+ dense (Dense)               (None, 128)               10240128  
+                                                                 
+ dropout_1 (Dropout)         (None, 128)               0         
+                                                                 
+ dense_1 (Dense)             (None, 64)                8256      
+                                                                 
+ dropout_2 (Dropout)         (None, 64)                0         
+                                                                 
+ dense_2 (Dense)             (None, 1)                 65        
+                                                                 
+=================================================================
+Total params: 10,253,377
+Trainable params: 10,253,313
+Non-trainable params: 64
+_________________________________________________________________
+Epoch 1/15
+81/81 [==============================] - 479s 6s/step - loss: 0.5076 - accuracy: 0.7686 - val_loss: 0.6491 - val_accuracy: 0.6215 - lr: 0.0100
+Epoch 2/15
+81/81 [==============================] - 498s 6s/step - loss: 0.3666 - accuracy: 0.8375 - val_loss: 0.6010 - val_accuracy: 0.6285 - lr: 0.0100
+Epoch 3/15
+81/81 [==============================] - ETA: 0s - loss: 0.3294 - accuracy: 0.8595   
+Epoch 3: ReduceLROnPlateau reducing learning rate to 0.0029999999329447745.
+81/81 [==============================] - 374s 5s/step - loss: 0.3294 - accuracy: 0.8595 - val_loss: 0.5880 - val_accuracy: 0.6233 - lr: 0.0100
+Epoch 4/15
+81/81 [==============================] - 302s 4s/step - loss: 0.2810 - accuracy: 0.8849 - val_loss: 0.5122 - val_accuracy: 0.7812 - lr: 0.0030
+Epoch 5/15
+81/81 [==============================] - ETA: 0s - loss: 0.2678 - accuracy: 0.8882  
+Epoch 5: ReduceLROnPlateau reducing learning rate to 0.0009000000078231095.
+81/81 [==============================] - 320s 4s/step - loss: 0.2678 - accuracy: 0.8882 - val_loss: 0.4582 - val_accuracy: 0.7969 - lr: 0.0030
+Epoch 6/15
+81/81 [==============================] - 325s 4s/step - loss: 0.2620 - accuracy: 0.8938 - val_loss: 0.4181 - val_accuracy: 0.8194 - lr: 9.0000e-04
+Epoch 7/15
+81/81 [==============================] - ETA: 0s - loss: 0.2588 - accuracy: 0.8967  
+Epoch 7: ReduceLROnPlateau reducing learning rate to 0.00026999999536201356.
+81/81 [==============================] - 350s 4s/step - loss: 0.2588 - accuracy: 0.8967 - val_loss: 0.3720 - val_accuracy: 0.8472 - lr: 9.0000e-04
+Epoch 8/15
+81/81 [==============================] - 268s 3s/step - loss: 0.2678 - accuracy: 0.8931 - val_loss: 0.3590 - val_accuracy: 0.8628 - lr: 2.7000e-04
+Epoch 9/15
+81/81 [==============================] - ETA: 0s - loss: 0.2493 - accuracy: 0.9014  
+Epoch 9: ReduceLROnPlateau reducing learning rate to 8.099999686237424e-05.
+81/81 [==============================] - 272s 3s/step - loss: 0.2493 - accuracy: 0.9014 - val_loss: 0.3518 - val_accuracy: 0.8646 - lr: 2.7000e-04
+Epoch 10/15
+81/81 [==============================] - 339s 4s/step - loss: 0.2535 - accuracy: 0.9012 - val_loss: 0.3367 - val_accuracy: 0.8733 - lr: 8.1000e-05
+Epoch 11/15
+81/81 [==============================] - ETA: 0s - loss: 0.2558 - accuracy: 0.8964  
+Epoch 11: ReduceLROnPlateau reducing learning rate to 2.429999949526973e-05.
+81/81 [==============================] - 355s 4s/step - loss: 0.2558 - accuracy: 0.8964 - val_loss: 0.3439 - val_accuracy: 0.8750 - lr: 8.1000e-05
+Epoch 12/15
+81/81 [==============================] - 257s 3s/step - loss: 0.2509 - accuracy: 0.8985 - val_loss: 0.3445 - val_accuracy: 0.8733 - lr: 2.4300e-05
+Epoch 13/15
+81/81 [==============================] - ETA: 0s - loss: 0.2529 - accuracy: 0.8965  
+Epoch 13: ReduceLROnPlateau reducing learning rate to 7.289999848580919e-06.
+81/81 [==============================] - 217s 3s/step - loss: 0.2529 - accuracy: 0.8965 - val_loss: 0.3453 - val_accuracy: 0.8715 - lr: 2.4300e-05
+Epoch 14/15
+81/81 [==============================] - 154s 2s/step - loss: 0.2566 - accuracy: 0.8981 - val_loss: 0.3433 - val_accuracy: 0.8750 - lr: 7.2900e-06
+Epoch 15/15
+81/81 [==============================] - ETA: 0s - loss: 0.2563 - accuracy: 0.9004  
+Epoch 15: ReduceLROnPlateau reducing learning rate to 2.186999927289435e-06.
+81/81 [==============================] - 158s 2s/step - loss: 0.2563 - accuracy: 0.9004 - val_loss: 0.3352 - val_accuracy: 0.8767 - lr: 7.2900e-06
+20/20 [==============================] - 3s 133ms/step
+Confussion Matrix -------------------
+[[177  57]
+ [ 21 369]]
+
+Test Metrics ---------------------------
+Accuracy: 87.5%
+Precision: 86.61971830985915%
+Recall: 94.61538461538461%
+F1-score: 90.44117647058823
